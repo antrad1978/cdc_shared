@@ -1,1 +1,1 @@
-# cdc_shared
+# CDC shared interfaces for plugin development
