@@ -8,7 +8,7 @@ type ConnectorProvider interface {
 	Name() string
 	Modes() []string
 	InsertRows(connector Connector, rows []map[string]interface{}) int
-	MoveData(sourceConnector Connector, destinationConnector Connector, mode string)
+	MoveData(sync Sync)
 }
 
 type DatabaseConnectorProvider interface {
@@ -19,4 +19,3 @@ type DatabaseConnectorProvider interface {
 	GetMaxTimestamp(connector Connector) (time.Time, error)
 	GetRecordsByTimestamp(connector Connector, lastTimestamp time.Time) ([]map[string]interface{}, time.Time)
 }
-
