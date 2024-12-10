@@ -1,6 +1,7 @@
 package cdc_shared
 
 import (
+	"context"
 	"time"
 )
 
@@ -8,7 +9,7 @@ type ConnectorProvider interface {
 	Name() string
 	Modes() []string
 	InsertRows(connector Connector, rows []map[string]interface{}) int
-	MoveData(sync Sync)
+	MoveData(sync Sync, ctx context.Context)
 }
 
 type DatabaseConnectorProvider interface {
